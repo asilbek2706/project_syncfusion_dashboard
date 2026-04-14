@@ -6,23 +6,8 @@ import {
     AiOutlineShoppingCart,
     AiOutlineStock,
 } from 'react-icons/ai';
-import {
-    FiBarChart,
-    FiCreditCard,
-    FiEdit,
-    FiPieChart,
-    FiShoppingBag,
-    FiShoppingCart,
-    FiStar,
-} from 'react-icons/fi';
-import {
-    BsBarChart,
-    BsBoxSeam,
-    BsChatLeft,
-    BsCurrencyDollar,
-    BsKanban,
-    BsShield,
-} from 'react-icons/bs';
+import { FiBarChart, FiCreditCard, FiEdit, FiPieChart, FiShoppingBag, FiShoppingCart, FiStar, } from 'react-icons/fi';
+import { BsBarChart, BsBoxSeam, BsChatLeft, BsCurrencyDollar, BsKanban, BsShield, } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
@@ -2961,7 +2946,7 @@ export const stackedChartData = [
         { x: 'Apr', y: 159.9 },
         { x: 'May', y: 159.9 },
         { x: 'Jun', y: 159.9 },
-        { x: 'July', y: 170 },
+        { x: 'July', y: 159.9 },
     ],
 ];
 
