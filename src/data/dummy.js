@@ -1,27 +1,27 @@
 import React from 'react';
 import {
-    AiOutlineCalendar,
-    AiOutlineShoppingCart,
     AiOutlineAreaChart,
     AiOutlineBarChart,
+    AiOutlineCalendar,
+    AiOutlineShoppingCart,
     AiOutlineStock,
 } from 'react-icons/ai';
 import {
-    FiShoppingBag,
-    FiEdit,
-    FiPieChart,
     FiBarChart,
     FiCreditCard,
-    FiStar,
+    FiEdit,
+    FiPieChart,
+    FiShoppingBag,
     FiShoppingCart,
+    FiStar,
 } from 'react-icons/fi';
 import {
-    BsKanban,
     BsBarChart,
     BsBoxSeam,
-    BsCurrencyDollar,
-    BsShield,
     BsChatLeft,
+    BsCurrencyDollar,
+    BsKanban,
+    BsShield,
 } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
@@ -42,11 +42,10 @@ import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
-import product8 from './product8.jpg';
 
 export const gridOrderImage = (props) => (
     <div>
-        <img className='rounded-xl h-20 md:ml-3' src={props.ProductImage} alt='order-item' />
+        <img className='h-20 rounded-xl md:ml-3' src={props.ProductImage} alt='order-item' />
     </div>
 );
 
@@ -54,7 +53,7 @@ export const gridOrderStatus = (props) => (
     <button
         type='button'
         style={{ background: props.StatusBg }}
-        className='text-white py-1 px-2 capitalize rounded-2xl text-md'
+        className='text-md rounded-2xl px-2 py-1 capitalize text-white'
     >
         {props.Status}
     </button>
@@ -71,7 +70,7 @@ export const kanbanGrid = [
 ];
 const gridEmployeeProfile = (props) => (
     <div className='flex items-center gap-2'>
-        <img className='rounded-full w-10 h-10' src={props.EmployeeImage} alt='employee' />
+        <img className='h-10 w-10 rounded-full' src={props.EmployeeImage} alt='employee' />
         <p>{props.Name}</p>
     </div>
 );
@@ -123,7 +122,7 @@ export const EditorData = () => (
 );
 const customerGridImage = (props) => (
     <div className='image flex gap-4'>
-        <img className='rounded-full w-10 h-10' src={props.CustomerImage} alt='employee' />
+        <img className='h-10 w-10 rounded-full' src={props.CustomerImage} alt='employee' />
         <div>
             <p>{props.CustomerName}</p>
             <p>{props.CustomerEmail}</p>
@@ -132,8 +131,8 @@ const customerGridImage = (props) => (
 );
 
 const customerGridStatus = (props) => (
-    <div className='flex gap-2 justify-center items-center text-gray-700 capitalize'>
-        <p style={{ background: props.StatusBg }} className='rounded-full h-3 w-3' />
+    <div className='flex items-center justify-center gap-2 capitalize text-gray-700'>
+        <p style={{ background: props.StatusBg }} className='h-3 w-3 rounded-full' />
         <p>{props.Status}</p>
     </div>
 );
@@ -2962,7 +2961,7 @@ export const stackedChartData = [
         { x: 'Apr', y: 159.9 },
         { x: 'May', y: 159.9 },
         { x: 'Jun', y: 159.9 },
-        { x: 'July', y: 159.9 },
+        { x: 'July', y: 170 },
     ],
 ];
 
