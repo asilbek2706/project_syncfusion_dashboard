@@ -4,6 +4,7 @@ import { GoDotFill } from 'react-icons/go';
 
 import { Button, SparkLine, Stacked } from '../components';
 import { earningData, SparklineAreaData } from '../data/dummy';
+import welcomeBg from '../data/welcome-bg.svg';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Ecommerce = () => {
@@ -12,7 +13,10 @@ const Ecommerce = () => {
     return (
         <div className='mt-24'>
             <div className='flex flex-wrap justify-center lg:flex-nowrap'>
-                <div className='m-3 h-44 w-full rounded-xl bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat p-8 pt-9 dark:bg-secondary-dark-bg dark:text-gray-200 lg:w-80'>
+                <div
+                    className='m-3 h-44 w-full rounded-xl bg-white bg-cover bg-center bg-no-repeat p-8 pt-9 dark:bg-secondary-dark-bg dark:text-gray-200 lg:w-80'
+                    style={{ backgroundImage: `url(${welcomeBg})` }}
+                >
                     <div className='flex items-center justify-between'>
                         <div>
                             <p className='font-bold text-gray-400'>Earnings</p>
@@ -20,14 +24,19 @@ const Ecommerce = () => {
                         </div>
                         <button
                             type='button'
-                            style={{ backgroundColor: 'blue' }}
+                            style={{ backgroundColor: currentColor }}
                             className='opacity-0.9 rounded-full p-4 text-2xl text-white hover:drop-shadow-xl'
                         >
                             <BsCurrencyDollar />
                         </button>
                     </div>
                     <div className='mt-6'>
-                        <Button color='white' bgColor='blue' text='Download' borderRadius='10px' />
+                        <Button
+                            color='white'
+                            bgColor={currentColor}
+                            text='Download'
+                            borderRadius='10px'
+                        />
                     </div>
                 </div>
                 <div className='m-3 flex flex-wrap items-center justify-center gap-1'>
@@ -105,7 +114,7 @@ const Ecommerce = () => {
                             <div className='mt-10'>
                                 <Button
                                     color='white'
-                                    bgColor='blue'
+                                    bgColor={currentColor}
                                     text='Download Report'
                                     borderRadius='10px'
                                 />

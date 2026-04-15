@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
+import { Navbar, Sidebar, ThemeSettings } from './components';
 import {
     Ecommerce,
     Orders,
@@ -28,24 +27,26 @@ import { useStateContext } from './contexts/ContextProvider';
 import './App.css';
 
 const App = () => {
-    const { activeMenu } = useStateContext();
+    const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } =
+        useStateContext();
     return (
-        <div>
+        <div className={currentMode === 'Dark' ? 'dark' : ''}>
             <BrowserRouter>
-                <div className='flex relative dark:bg-main-dark-bg'>
-                    <div className='fixed right-4 bottom-4' style={{ zIndex: '1000' }}>
+                <div className='relative flex dark:bg-main-dark-bg'>
+                    <div className='fixed bottom-4 right-4' style={{ zIndex: '1000' }}>
                         <TooltipComponent content='Settings' position='Top'>
                             <button
                                 type='button'
-                                className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
-                                style={{ background: 'blue', borderRadius: '50%' }}
+                                className='p-3 text-3xl text-white hover:bg-light-gray hover:drop-shadow-xl'
+                                style={{ background: currentColor, borderRadius: '50%' }}
+                                onClick={() => setThemeSettings(true)}
                             >
                                 <FiSettings />
                             </button>
                         </TooltipComponent>
                     </div>
                     {activeMenu ? (
-                        <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
+                        <div className='sidebar fixed w-72 bg-white dark:bg-secondary-dark-bg'>
                             <Sidebar />
                         </div>
                     ) : (
@@ -54,15 +55,17 @@ const App = () => {
                         </div>
                     )}
                     <div
-                        className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
+                        className={`min-h-screen w-full bg-main-bg dark:bg-main-dark-bg ${
                             activeMenu ? 'md:ml-72' : 'flex-2'
                         }`}
                     >
-                        <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
+                        <div className='navbar fixed w-full bg-main-bg dark:bg-main-dark-bg md:static'>
                             <Navbar />
                         </div>
 
                         <div>
+                            {themeSettings && <ThemeSettings />}
+
                             <Routes>
                                 {/* Dashboard */}
                                 <Route path='/' element={<Ecommerce />} />
